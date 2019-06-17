@@ -3,6 +3,7 @@ apiVersion: extensions/v1beta1
 kind: PodSecurityPolicy
 metadata:
   name: privileged-{{ template "cluster-autoscaler.fullname" . }}
+  namespace: {{ .Release.Namespace }}
 spec:
   allowedCapabilities:
   - '*'
